@@ -23,5 +23,7 @@ Meteor.startup(() => {
     console.log('Total items:' + numberRecords);
   }
 
-
+  Meteor.publish('employees', function (perpage) {
+    return Employees.find({}, {limit: perpage});
+  });
 });
